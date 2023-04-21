@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&family=Quicksand:wght@400;500&family=Source+Sans+Pro:wght@300&display=swap');
 
 * {
@@ -52,9 +55,9 @@ p {
   max-width: 700px;
   height: 700px;
   margin: auto;
-  gap: 40px;
+  #gap: 40px;
   padding: 1rem;
-  padding-top: 5rem;
+  #padding-top: 5rem;
   position: relative;
   top: 5%;
   display: flex;
@@ -66,6 +69,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 1rem;
 }
 
 .wrapper .hourly {
@@ -92,10 +96,15 @@ p {
 
 .header {
   position: absolute;
-  top: 0%;
+  top: 83%;
   display: flex;
   height: 55px;
   width: 100%;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  left: 90%;
 }

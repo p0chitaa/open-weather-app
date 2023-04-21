@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import HourlyForecast from './components/HourlyForecast';
 import SearchIcon from '@mui/icons-material/Search';
+import WeeklyForecast from "./components/WeeklyForecast";
 
 
 function App() {
@@ -22,22 +24,11 @@ function App() {
                 <p>H:67° L:47°</p>
             </div>
         </div>
-        <div className="hourly">
-            <div className="hour">
-                testing
-            </div>
-            <div className="hour">
-                testing again
-            </div>
-        </div>
-        <div className="forecast">
-            <div className="day">
-                even more testing!
-            </div>
-        </div>
+        <HourlyForecast></HourlyForecast>
+        <WeeklyForecast></WeeklyForecast>
       </div>
       <div className="header">
-          <SearchIcon />
+          <SearchIcon className="search-icon"/>
       </div>
     </div>
   );
