@@ -1,7 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&family=Quicksand:wght@400;500&family=Source+Sans+Pro:wght@300&display=swap');
+@import 'tailwindcss/base';
+@import  'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,11 +12,12 @@
 
 body {
   margin: 0;
-  font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
 }
 
 code {
@@ -28,7 +30,11 @@ p {
 }
 
 .main-degrees {
-  font-size: 6rem;
+  position: relative;
+  left: 9%;
+  font-size: 6.3rem;
+  margin: -30px;
+  font-weight: 200;
 }
 
 .App {
@@ -51,7 +57,7 @@ p {
   z-index: -1;
 }
 
-.wrapper {
+#wrapper {
   max-width: 700px;
   height: 700px;
   margin: auto;
@@ -59,7 +65,7 @@ p {
   padding: 1rem;
   #padding-top: 5rem;
   position: relative;
-  top: 5%;
+  top: 6%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,42 +75,39 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2.5rem;
 }
 
-.wrapper .hourly {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  width: 92%;
-  border-radius: 12px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+.description {
+  margin-bottom: -3px;
 }
 
-.wrapper .forecast {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  width: 92%;
-  border-radius: 12px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+#city {
+  font-weight: 500;
 }
 
-.header {
+#description {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#high-and-low {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer {
   position: absolute;
-  top: 83%;
+  top: 84.5%;
   display: flex;
-  height: 55px;
+  height: 45px;
   width: 100%;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(25, 25, 25, 0.9);
 }
 
 .search-icon {
   position: absolute;
   left: 90%;
+  bottom: 25%;
 }

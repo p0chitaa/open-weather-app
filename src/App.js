@@ -9,25 +9,25 @@ function App() {
 
   return (
     <div className="App">
-      <div className="wrapper">
+      <div id="wrapper" className="overflow-y-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide">
         <div className="head">
           <div className="city">
-              <p>Detroit</p>
+              <p id="city">Detroit</p>
           </div>
-          <div className="degrees">
-              <p className="main-degrees">63° F</p>
-          </div>
+          <p className="main-degrees">47°</p>
             <div className="description">
-                <p>Partly Cloudy</p>
+                <p id="description">Partly Cloudy</p>
             </div>
             <div className="high-and-low">
-                <p>H:67° L:47°</p>
+                <p id="high-and-low">H:67° L:47°</p>
             </div>
         </div>
         <HourlyForecast></HourlyForecast>
         <WeeklyForecast></WeeklyForecast>
+          <br />
+          <br />
       </div>
-      <div className="header">
+      <div className="footer">
           <SearchIcon className="search-icon"/>
       </div>
     </div>
