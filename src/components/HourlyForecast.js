@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/hourly.css';
-import clock from '../assets/clock.png';
 
 function HourlyForecast() {
     return (

@@ -33,7 +33,7 @@ p {
   position: relative;
   left: 9%;
   font-size: 6.3rem;
-  margin: -30px;
+  margin: -27px;
   font-weight: 200;
 }
 
@@ -48,7 +48,7 @@ p {
 
 .App:before {
   content: '';
-  background: url(./assets/rocks.jpg) no-repeat center center/cover;
+  background: url(./assets/peakpx.jpg) no-repeat center center/cover;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -103,11 +103,20 @@ p {
   height: 45px;
   width: 100%;
   padding: 1rem;
-  background-color: rgba(25, 25, 25, 0.9);
+  background-color: rgba(50, 50, 50, 0.8);
 }
 
 .search-icon {
   position: absolute;
   left: 90%;
   bottom: 25%;
+}
+
+#info-wrapper {
+  width: 97%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  #justify-content: flex-start;
 }

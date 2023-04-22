@@ -5,26 +5,28 @@
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    width: 92%;
+    width: 97%;
     border-radius: 12px;
     margin: 1rem auto;
+    margin-bottom: -6px;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-#title {
-    margin-top: -3px;
+#title-wrap #title {
+    margin-top: -1.5px;
     display: flex;
-    font-size: 0.7rem;
     padding-left: 1rem;
     font-weight: 500;
+    font-size: 0.8rem;
 }
 
-#title-wrap {
+.hourly #title-wrap {
+    margin-top: -3px;
     background-image: url("../assets/clock.png");
     background-repeat: no-repeat;
-    background-size: 3%;
-    background-position: 0% 10%;
+    background-size: 4%;
+    background-position: 0% 35%;
     opacity: 0.5;
 }
 
