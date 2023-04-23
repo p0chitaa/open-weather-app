@@ -26,8 +26,12 @@ function App() {
         <HourlyForecast></HourlyForecast>
         <WeeklyForecast></WeeklyForecast>
         <div id="info-wrapper">
-            <InfoBox id="wind" name="WIND"></InfoBox>
+            <InfoBox name="WIND"></InfoBox>
             <InfoBox name="FEELS LIKE"></InfoBox>
+        </div>
+        <div id="info-wrapper">
+            <InfoBox name="HUMIDITY"></InfoBox>
+            <InfoBox name="PRESSURE"></InfoBox>
         </div>
           <br />
           <br />

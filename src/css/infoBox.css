@@ -12,7 +12,8 @@
     margin: 1rem auto;
     margin-bottom: -6px;
     padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(40, 40, 40, .2);
+    backdrop-filter: blur(10px);
 }
 
 #info-title {
@@ -25,7 +26,6 @@
 
 #info-title-wrap {
     margin-top: -5px;
-    background-image: url("../assets/clock.png");
     background-repeat: no-repeat;
     background-size: 10%;
     background-position: 0% 15%;
