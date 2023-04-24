@@ -1,18 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, ScrollView, View } from 'react-native';
-import { useState } from 'react';
+import { Animated, ImageBackground, StyleSheet, Text, ScrollView, View } from 'react-native';
+import React, { useRef, useState, useEffect } from 'react';
 import HourlyForecast from './components/HourlyForecast';
 import WeeklyForecast from "./components/WeeklyForecast";
 import InfoBox from './components/InfoBox';
+import SearchBar from './components/SearchBar';
 import clouds from './assets/peakpx.jpg';
+import axios from 'axios';
 
 export default function App() {
+  const [ data, setData ] = useState({});
+  const [ location, setLocation ] = useState('');
+
+  const currentWeather = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=11cbdb55c1427961db4eb2746aeeb7bc&units=imperial`;
+
+  /*const searchLocation = (event) => {
+    if (event.key === 'Enter') {
+      axios.get(currentWeather).then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      })
+    }
+  }*/
+
   return (
     <ImageBackground style={styles.background} source={clouds}>
       <StatusBar style="auto" />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom:60 }}>
+      <View style={styles.search_hider}></View>
+      <ScrollView contentInset={{ top:58 }} showsVerticalScrollIndicator={false} keyboardDismissMode='on-drag' style={{position: 'relative'}}>
       <View style={styles.container}>
         <View style={styles.wrapper}>
+          <SearchBar style={styles.search_bar}></SearchBar>
           <View style={styles.head}>
             <Text style={styles.city}>Detroit</Text>
             <Text style={styles.main_degrees}>47°</Text>
@@ -43,16 +61,25 @@ const styles = StyleSheet.create({
     "flex": 1,
     flexDirection: "column",
     "position": "relative",
-    //paddingBottom: 10,
+    paddingBottom: 10,
     "height": "100%",
     "width": "100%",
     overflow: "visible",
-    marginTop: -4
+    top: -95
+    //transform: "translate(0px -50px)"
+    //top: -50
+    //marginTop: -250,
+    //backgroundColor: "rgba(0, 0, 0, 0.1)"
   },
   "": {
     "boxSizing": "border-box",
     "margin": 0,
     "padding": 0
+  },
+  search_bar: {
+    position: "absolute",
+    top: 0,
+    marginTop: 90
   },
   body: {
     "margin": "0",
@@ -66,6 +93,11 @@ const styles = StyleSheet.create({
   },
   blank: {
     height: 300,
+  },
+  search_hider: {
+    position: "relative",
+    marginTop: 32,
+    height: 70,
   },
   main_degrees: {
     "position": "relative",
@@ -104,7 +136,7 @@ const styles = StyleSheet.create({
     position: "relative",
     "flexDirection": "column",
     "alignItems": "center",
-    marginTop: "26.25%",
+    marginTop: 50,
     gap: -10,
   },
   description: {
