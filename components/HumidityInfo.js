@@ -1,25 +1,16 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
+import humidity from '../assets/humidity.png';
 import { BlurView } from 'expo-blur';
-import wind from '../assets/wind.png';
-import compass from '../assets/compass.png';
-import arrow from '../assets/arrow.png';
 
-export default function InfoBox(props) {
+export default function HumidityInfo(props) {
     return (
-        <View style={[styles.InfoBox, {backgroundColor: "rgb(0, 0, 0, 0.225)"}]}>
-            <BlurView style={[{backgroundColor: "rgba(0, 0, 0, 0.225)"}]}>
+        <View style={styles.InfoBox}>
+            <BlurView style={[{backgroundColor: "rgba(0, 0, 0, 0.225)", height: 180}]}>
             <View style={styles.info_title_wrap}>
-                <Image style={styles.icon} source={wind}></Image>
-                <Text style={styles.info_title}>WIND</Text>
+                <Image style={styles.icon} source={humidity}></Image>
+                <Text style={styles.info_title}>HUMIDITY</Text>
             </View>
-            <Image style={styles.compass} source={compass}></Image>
-            <Image style={[styles.arrow, {transform: [{rotate: `${props.deg}deg`}]}]} source={arrow}></Image>
-            <View style={styles.wind_speed}>
-                <BlurView style={[{justifyContent: "center", alignItems: "center", width: 100, height: 100, backgroundColor: "rgba(0, 0, 0, 0.225)"}]}>
-                    <Text style={[styles.wind_text, {fontWeight: "700", fontSize: 20}]}>{props.speed}</Text>
-                    <Text style={[styles.wind_text, {marginTop: -3}]}>mph</Text>
-                </BlurView>
-            </View>
+            <Text style={styles.humidity}>{props.humidity}%</Text>
             </BlurView>
         </View>
     );
@@ -32,12 +23,12 @@ const styles = StyleSheet.create({
         "flexDirection": "column",
         "justifyContent": "flex-start",
         "width": "45%",
-        "minHeight": "20%",
+        "minHeight": "26%",
         "left": "7.5%",
-        "borderRadius": 17,
+        "borderRadius": 13,
         "margin": 1,
         "padding": 1,
-        overflow:"hidden"
+        overflow: "hidden"
     },
     info_title: {
         "display": "flex",
@@ -73,8 +64,9 @@ const styles = StyleSheet.create({
         position: "absolute",
         height:160,
         width: 170,
-        top: "15%",
-        left: "2.7%",
+        top: "22%",
+        transform: [{rotate: "0.5deg"}],
+        left: "2.25%",
         alignItems: "center",
         justifyContent:"center",
         zIndex: 50
@@ -90,10 +82,10 @@ const styles = StyleSheet.create({
         height:"35%",
         left: "32.5%",
         bottom: "25%",
+        "backgroundColor": "rgba(120, 120, 120, 0.8)",
         shadowColor: "black",
         shadowOpacity: 1,
-        shadowRadius: 4,
-        overflow: "hidden",
+        shadowRadius: 3,
         zIndex: 2000
     },
     wind_text: {
@@ -103,4 +95,10 @@ const styles = StyleSheet.create({
         height: 30,
         backgroundColor: "rgba(0, 0, 0, 0.2)"
     },
+    humidity: {
+        color: "rgb(224, 224, 224)",
+        fontSize: 35,
+        left: 16,
+        top: 5
+    }
 });
