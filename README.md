@@ -39,8 +39,7 @@ an open source lightweight weather app
 
 8. Open a new terminal instance
    * You may need to install expo, so just run `npm install expo` first
-9.  `npm install`
-10.  `npx expo start`
-11. Scan the QR code in the terminal with your phone
+9.  `npm install && npx expo start`
+10. Scan the QR code in the terminal with your phone
 
 as long as your phone is on the same network as your machine, this *should* work
