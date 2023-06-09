@@ -33,9 +33,9 @@ an open source lightweight weather app
 <br />
 
 6. And when that finishes, copy the generated API key
-7. Go to the `.env` file in the project root directory
-   * Enter `API_KEY="PASTE_KEY_HERE"`
-     * Ensure the quotation marks remain!
+7. Go to `App.js` in the project root directory
+   * On lines 24 and 25 replace `${API_KEY}` with your newly generated API key
+      * May take up to two hours for your API key to activate and function properly
 
 8. Open a new terminal instance
    * You may need to install expo, so just run `npm install expo` first
